@@ -39,6 +39,7 @@
 \graphicspath{{images/}}
 
 
+
 %Форматирование заголовков
 \usepackage{titlesec}
  
@@ -126,3 +127,15 @@
 \renewcommand{\bibnumfmt}[1]{#1.\hfill} % нумерация источников в самом списке — через точку
 \renewcommand{\bibsection}{\likechapter{Список литературы}} % заголовок специального раздела
 \setlength{\bibsep}{0pt}
+
+
+%Вставк pdf файлов
+\usepackage{pdfpages}
+\newcommand{\append}[1]{ 
+    \clearpage
+    \stepcounter{chapter}    
+    \paragraph{\MakeUppercase{#1}}
+   \empline
+    \addcontentsline{toc}{likechapter}{\MakeUppercase{\chaptertitlename~\Asbuk{chapter}\;#1}}}
+    
+    
